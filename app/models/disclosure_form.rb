@@ -1,0 +1,2 @@
+class DisclosureForm < ApplicationRecord
+end

@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 2018_06_15_042518) do
     t.string "city_state_zip"
     t.string "email"
     t.string "home_phone"
+    t.string "whatisnst"
+    t.string "participant"
+    t.string "pricingandpayment"
+    t.string "finalagreement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_disclosure_forms_on_name"

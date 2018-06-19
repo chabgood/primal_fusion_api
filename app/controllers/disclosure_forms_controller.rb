@@ -40,6 +40,6 @@ class DisclosureFormsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def disclosure_form_params
-      params.permit(:name, :dob, :street, :apt_number, :city_state_zip, :email, :home_phone)
+      params.permit(:name, :dob, :street, :apt_number, :city_state_zip, :email, :home_phone, :whatisnst, :participant, :pricingandpayment, :finalagreement)
     end
 end

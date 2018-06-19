@@ -8,6 +8,10 @@ class CreateDisclosureForms < ActiveRecord::Migration[5.2]
       t.string :city_state_zip
       t.string :email
       t.string :home_phone
+      t.string :whatisnst
+      t.string :participant
+      t.string :pricingandpayment
+      t.string :finalagreement
 
       t.timestamps
     end

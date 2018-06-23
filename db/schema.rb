@@ -13,20 +13,22 @@
 ActiveRecord::Schema.define(version: 2018_06_15_042518) do
 
   create_table "disclosure_forms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "dob"
-    t.string "street"
-    t.string "apt_number"
-    t.string "city_state_zip"
-    t.string "email"
-    t.string "home_phone"
-    t.string "whatisnst"
-    t.string "participant"
-    t.string "pricingandpayment"
-    t.string "finalagreement"
+    t.string "encrypted_name"
+    t.string "encrypted_dob"
+    t.string "encrypted_street"
+    t.string "encrypted_apt_number"
+    t.string "encrypted_city_state_zip"
+    t.string "encrypted_email"
+    t.string "encrypted_home_phone"
+    t.string "encrypted_whatisnst"
+    t.string "encrypted_participant"
+    t.string "encrypted_pricingandpayment"
+    t.string "encrypted_finalagreement"
+    t.string "encrypted_emergency_contact_name"
+    t.string "encrypted_emergency_contact_phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_disclosure_forms_on_name"
+    t.index ["encrypted_name"], name: "index_disclosure_forms_on_encrypted_name"
   end
 
 end

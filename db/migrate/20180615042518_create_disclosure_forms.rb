@@ -1,18 +1,19 @@
 class CreateDisclosureForms < ActiveRecord::Migration[5.2]
   def change
     create_table :disclosure_forms do |t|
-      t.string :name, index: true
-      t.string :dob
-      t.string :street
-      t.string :apt_number
-      t.string :city_state_zip
-      t.string :email
-      t.string :home_phone
-      t.string :whatisnst
-      t.string :participant
-      t.string :pricingandpayment
-      t.string :finalagreement
-
+      t.string :encrypted_name, index: true, unique: true
+      t.string :encrypted_dob
+      t.string :encrypted_street
+      t.string :encrypted_apt_number, default: nil
+      t.string :encrypted_city_state_zip
+      t.string :encrypted_email
+      t.string :encrypted_home_phone
+      t.string :encrypted_whatisnst
+      t.string :encrypted_participant
+      t.string :encrypted_pricingandpayment
+      t.string :encrypted_finalagreement
+      t.string :encrypted_emergency_contact_name
+      t.string :encrypted_emergency_contact_phone
       t.timestamps
     end
   end

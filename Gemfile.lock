@@ -47,8 +47,12 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
     erubi (1.7.1)
     ffi (1.9.25)
     globalid (0.4.1)
@@ -122,6 +126,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    symmetric-encryption (4.0.1)
+      coercible (~> 1.0)
     thor (0.20.0)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
@@ -143,6 +149,7 @@ DEPENDENCIES
   rails (~> 5.2.0)
   spring
   spring-watcher-listen (~> 2.0.0)
+  symmetric-encryption
   tzinfo-data
 
 RUBY VERSION

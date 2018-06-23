@@ -15,9 +15,9 @@ class DisclosureFormsController < ApplicationController
 
   # POST /disclosure_forms
   def create
-    @disclosure_form = DisclosureForm.find_by(name: params[:name]) || DisclosureForm.new(disclosure_form_params)
+    @disclosure_form = DisclosureForm.find_by(encrypted_name: SymmetricEncryption.encrypt(params[:name])) || DisclosureForm.new(disclosure_form_params)
     if @disclosure_form.save
-      render json: @disclosure_form, status: :created, location: @disclosure_form
+      render json: @disclosure_form, status: :created
     else
       render json: @disclosure_form.errors, status: :unprocessable_entity
     end
@@ -40,6 +40,7 @@ class DisclosureFormsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def disclosure_form_params
-      params.permit(:name, :dob, :street, :apt_number, :city_state_zip, :email, :home_phone, :whatisnst, :participant, :pricingandpayment, :finalagreement)
+      params.permit(:name, :dob, :street, :apt_number, :city_state_zip, :email, :home_phone, :whatisnst, :participant,
+        :pricingandpayment, :finalagreement, :emergency_contact_name, :emergency_contact_phone)
     end
 end
